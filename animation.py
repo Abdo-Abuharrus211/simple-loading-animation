@@ -36,6 +36,10 @@ def launch_slideshow(file_path):
         print(f"File not found: {file_path}")
 
 
-if __name__ == '__main__':
+def main():
     begin()
     launch_slideshow('D:\Documents\My projects\Marp proj\phsa-co-op-presentation\exports\Goodbye pres.pdf')
+
+
+if __name__ == '__main__':
+    main()
