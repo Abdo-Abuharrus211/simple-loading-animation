@@ -1,10 +1,8 @@
 import os
-import subprocess
-import time
 from random import randint
 from rich.console import Console
 from rich.theme import Theme
-from rich.progress import Progress, track
+from rich.progress import track
 from time import sleep
 
 MY_THEME = Theme({'cyber_process': 'bold #fdf800', 'ready': 'bold underline green'})
@@ -30,7 +28,7 @@ def begin():
 def launch_slideshow(file_path):
     if os.path.exists(file_path):
         if os.name == 'nt':
-            os.startfile(file_path)
+            os.system(f'start powerpnt /s "{file_path}"')            # os.system(f"powerpoint /s {file_path}")
         print(f"Opening {file_path}")
     else:
         print(f"File not found: {file_path}")
@@ -38,7 +36,7 @@ def launch_slideshow(file_path):
 
 def main():
     begin()
-    launch_slideshow('D:\Documents\My projects\Marp proj\phsa-co-op-presentation\exports\Goodbye pres.pdf')
+    launch_slideshow('D:\Documents\My projects\Marp proj\phsa-co-op-presentation\exports\Goodbye pres.pptx')
 
 
 if __name__ == '__main__':
